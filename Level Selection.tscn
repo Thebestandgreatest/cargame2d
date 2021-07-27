@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Images/1.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Back Arrow.gd" type="Script" id=2]
+[ext_resource path="res://Images/arrow.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Stage 1.gd" type="Script" id=4]
+
+[node name="Level Selection" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 608.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back Arrow" type="TextureButton" parent="Control"]
+margin_right = 128.0
+margin_bottom = 128.0
+texture_normal = ExtResource( 3 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stage 1" type="TextureButton" parent="Control"]
+margin_left = 128.0
+margin_top = 128.0
+margin_right = 256.0
+margin_bottom = 256.0
+texture_normal = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[connection signal="pressed" from="Control/Back Arrow" to="Control/Back Arrow" method="_on_Back_Arrow_pressed"]
+[connection signal="pressed" from="Control/Stage 1" to="Control/Stage 1" method="_on_Stage_1_pressed"]

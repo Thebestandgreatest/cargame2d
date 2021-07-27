@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/Roboto-Black.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/levelScreen.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 1 )
+
+[node name="finishScreen" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 640.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Control"]
+anchor_left = 0.375
+anchor_top = 0.6
+anchor_right = 0.625
+anchor_bottom = 0.7
+margin_left = -3.05176e-05
+margin_bottom = -3.05176e-05
+custom_fonts/font = SubResource( 1 )
+text = "Levels"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_Button_pressed"]

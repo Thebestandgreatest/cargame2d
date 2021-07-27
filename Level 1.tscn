@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Level Parts/short straight.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Level Parts/start.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level Parts/short corner.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level Parts/long corner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Level Parts/checkpoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Images/grass.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Level 1.gd" type="Script" id=8]
+
+[node name="Level 1" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="Level" type="Node2D" parent="."]
+position = Vector2( -128, 576 )
+
+[node name="TextureRect" type="TextureRect" parent="Level"]
+margin_left = -3968.0
+margin_top = -4160.0
+margin_right = 6336.0
+margin_bottom = 4608.0
+texture = ExtResource( 7 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D5" parent="Level" instance=ExtResource( 1 )]
+position = Vector2( 2048, -2560 )
+
+[node name="Start" parent="Level" instance=ExtResource( 2 )]
+position = Vector2( 1280, -2560 )
+
+[node name="Node2D" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( -2048, 3072 )
+rotation = -1.5708
+
+[node name="Short Corner3" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( 512, 0 )
+rotation = -4.46638e-06
+
+[node name="Front Straight" parent="Level" instance=ExtResource( 1 )]
+position = Vector2( 2816, 512 )
+rotation = -3.14159
+
+[node name="Short Corner" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( 4352, 512 )
+rotation = 3.14159
+
+[node name="Long Corner" parent="Level" instance=ExtResource( 4 )]
+position = Vector2( -2048, -2560 )
+
+[node name="Short Corner2" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( 4352, -2560 )
+rotation = 1.5708
+
+[node name="Node2D2" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( 1024, 3072 )
+rotation = 3.14159
+
+[node name="Node2D3" parent="Level" instance=ExtResource( 1 )]
+position = Vector2( -1536, 768 )
+rotation = 1.5708
+
+[node name="Checkpoint1" parent="Level" instance=ExtResource( 5 )]
+position = Vector2( -512, 2816 )
+rotation = 1.57079
+
+[node name="Node2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1408, -1704.06 )
